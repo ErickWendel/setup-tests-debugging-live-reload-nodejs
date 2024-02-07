@@ -2,28 +2,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
-            "request": "launch",
             "name": "Run Test Debugger",
+            "request": "launch",
             "runtimeExecutable": "npm",
             "runtimeArgs": [
                 "run",
-                "test:debug"
+                "test:debug",
             ],
-            "console": "integratedTerminal"
-        },
-        {
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
             "type": "node",
-            "request": "attach",
-            "name": "Attach Debugger",
-            "port": 9229
-        },
-
-    ],
-    "compounds": [
-        {
-            "name": "Run and Debug",
-            "configurations": ["Run Test Debugger", "Attach Debugger"]
+            "console": "integratedTerminal"
         }
-    ]
+    ],
+    "compounds": []
 }
